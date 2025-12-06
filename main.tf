@@ -13,6 +13,7 @@ variable "subscription_id" {
 variable "tenant_id" {
   type = string
 }
+
 resource "azurerm_resource_group" "RG" {
   name     = "Azure_Tf_Resource-_Group"
   location = "East US"
@@ -23,9 +24,7 @@ resource "azurerm_resource_group" "RG" {
 
  provider "azurerm" {
   features {}
-
-  skip_provider_registration = "true"
-
+  resource_provider_registrations = "none"
   # Connection to Azure
   subscription_id = var.subscription_id
   client_id = var.client_id

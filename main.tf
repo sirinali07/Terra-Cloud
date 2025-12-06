@@ -16,6 +16,9 @@ variable "tenant_id" {
 resource "azurerm_resource_group" "RG" {
   name     = "Azure_Tf_Resource-_Group"
   location = "East US"
+  tags = {
+    client = "Sirin"
+  }
 }
 
  provider "azurerm" {
